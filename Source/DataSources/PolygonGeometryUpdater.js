@@ -18,6 +18,7 @@ define([
         './ColorMaterialProperty',
         './DynamicGeometryUpdater',
         './GeometryUpdater',
+        './GroundGeometryUpdater',
         './Property'
     ], function(
         Check,
@@ -39,6 +40,7 @@ define([
         ColorMaterialProperty,
         DynamicGeometryUpdater,
         GeometryUpdater,
+        GroundGeometryUpdater,
         Property) {
     'use strict';
 
@@ -67,7 +69,7 @@ define([
      * @param {Scene} scene The scene where visualization is taking place.
      */
     function PolygonGeometryUpdater(entity, scene) {
-        GeometryUpdater.call(this, {
+        GroundGeometryUpdater.call(this, {
             entity : entity,
             scene : scene,
             geometryOptions : new PolygonGeometryOptions(entity),
@@ -77,7 +79,7 @@ define([
     }
 
     if (defined(Object.create)) {
-        PolygonGeometryUpdater.prototype = Object.create(GeometryUpdater.prototype);
+        PolygonGeometryUpdater.prototype = Object.create(GroundGeometryUpdater.prototype);
         PolygonGeometryUpdater.prototype.constructor = PolygonGeometryUpdater;
     }
 

@@ -56,7 +56,7 @@ define([
         return true;
     };
 
-    DynamicGeometryBatch.prototype.removeAllPrimitives = function() {
+    DynamicGeometryBatch.prototype.destroy = function() {
         var geometries = this._dynamicUpdaters.values;
         for (var i = 0, len = geometries.length; i < len; i++) {
             geometries[i].destroy();

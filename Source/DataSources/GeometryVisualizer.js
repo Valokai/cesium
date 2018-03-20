@@ -11,6 +11,7 @@ define([
         '../Scene/ClassificationType',
         '../Scene/MaterialAppearance',
         '../Scene/PerInstanceColorAppearance',
+        '../Scene/PrimitiveCollection',
         '../Scene/ShadowMode',
         './BoundingSphereState',
         './BoxGeometryUpdater',
@@ -42,6 +43,7 @@ define([
         ClassificationType,
         MaterialAppearance,
         PerInstanceColorAppearance,
+        PrimitiveCollection,
         ShadowMode,
         BoundingSphereState,
         BoxGeometryUpdater,
@@ -332,7 +334,7 @@ define([
         var batches = this._batches;
         var length = batches.length;
         for (i = 0; i < length; i++) {
-            batches[i].removeAllPrimitives();
+            batches[i].destroy();
         }
 
         var subscriptions = this._subscriptions.values;

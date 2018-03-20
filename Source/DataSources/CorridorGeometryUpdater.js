@@ -16,6 +16,7 @@ define([
         './ColorMaterialProperty',
         './DynamicGeometryUpdater',
         './GeometryUpdater',
+        './GroundGeometryUpdater',
         './Property'
     ], function(
         Check,
@@ -35,6 +36,7 @@ define([
         ColorMaterialProperty,
         DynamicGeometryUpdater,
         GeometryUpdater,
+        GroundGeometryUpdater,
         Property) {
     'use strict';
 
@@ -61,7 +63,7 @@ define([
      * @param {Scene} scene The scene where visualization is taking place.
      */
     function CorridorGeometryUpdater(entity, scene) {
-        GeometryUpdater.call(this, {
+        GroundGeometryUpdater.call(this, {
             entity : entity,
             scene : scene,
             geometryOptions : new CorridorGeometryOptions(entity),
@@ -71,7 +73,7 @@ define([
     }
 
     if (defined(Object.create)) {
-        CorridorGeometryUpdater.prototype = Object.create(GeometryUpdater.prototype);
+        CorridorGeometryUpdater.prototype = Object.create(GroundGeometryUpdater.prototype);
         CorridorGeometryUpdater.prototype.constructor = CorridorGeometryUpdater;
     }
 
